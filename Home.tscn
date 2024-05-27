@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://t4utk2x05t0q"]
+
+[ext_resource type="Texture2D" uid="uid://cxmuq4ltvddqr" path="res://arte/img/Inicio.webp" id="1_27co8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Inicio" type="Sprite2D" parent="."]
+position = Vector2(568, 320)
+scale = Vector2(0.81529, 0.647461)
+texture = ExtResource("1_27co8")
