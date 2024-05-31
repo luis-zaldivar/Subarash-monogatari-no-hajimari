@@ -1,39 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4cndl34ef1m6"]
+[gd_scene load_steps=7 format=3 uid="uid://c2cnt572vfrll"]
 
-[ext_resource type="Texture2D" uid="uid://cg4kbe1f1ywp8" path="res://assets/images/backgrounds/Inicio.png" id="1_qd121"]
-[ext_resource type="Texture2D" uid="uid://g1hxtbx5edhw" path="res://assets/images/backgrounds/Icono.png" id="2_d0wxh"]
-[ext_resource type="Texture2D" uid="uid://dtb040eixubcv" path="res://assets/images/gui/Botones.png" id="3_frxa5"]
+[ext_resource type="Texture2D" uid="uid://cg4kbe1f1ywp8" path="res://assets/images/backgrounds/Inicio.png" id="1_1o18f"]
+[ext_resource type="Texture2D" uid="uid://g1hxtbx5edhw" path="res://assets/images/backgrounds/Icono.png" id="2_wqtop"]
+[ext_resource type="Texture2D" uid="uid://ceb1pipw7ns5" path="res://assets/images/gui/start.png" id="3_gwete"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxou"]
-size = Vector2(215.5, 51)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tqq6r"]
 
-[node name="Inicio" type="Node2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_doq0o"]
+texture = ExtResource("1_1o18f")
 
-[node name="Inicio" type="Sprite2D" parent="."]
-position = Vector2(571.75, 311)
-scale = Vector2(0.828404, 0.636719)
-texture = ExtResource("1_qd121")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb02s"]
+texture = ExtResource("2_wqtop")
 
-[node name="Icono" type="Sprite2D" parent="."]
-position = Vector2(250, 139)
-texture = ExtResource("2_d0wxh")
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_tqq6r")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -20.0
+offset_right = 148.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_doq0o")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(457, 458)
-scale = Vector2(1.032, 1)
-texture = ExtResource("3_frxa5")
-centered = false
-hframes = 2
-vframes = 7
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_top = -0.082
+anchor_right = 0.432
+anchor_bottom = 0.472
+offset_left = -0.415998
+offset_top = 0.136002
+offset_right = 0.335999
+offset_bottom = 0.143982
+theme_override_styles/panel = SubResource("StyleBoxTexture_fb02s")
 
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = 168.0
+offset_right = 108.5
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(600.25, 502)
-shape = SubResource("RectangleShape2D_lvxou")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_gwete")

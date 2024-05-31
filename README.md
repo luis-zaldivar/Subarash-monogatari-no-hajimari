@@ -1,119 +1,135 @@
 # Subarash-monogatari-no-hajimari
-## Background
 
-Este proyecto fue inspirado por el deseo de crear un juego que pueda ser disfrutado por el usuario y su hermano. La idea central es diseñar un juego donde los personajes experimenten un crecimiento constante en habilidades y herramientas dentro de un entorno de la Edad Media con criaturas míticas. El juego también incluirá elementos de estrategia.
+Subarash-monogatari-no-hajimari es un MMORPG ambientado en un mundo de fantasía medieval. Los jugadores pueden escoger entre varias razas y habilidades, explorar mazmorras, enfrentarse a enemigos y jefes poderosos, y mejorar sus personajes a lo largo de 100 niveles. Además, el juego incluye la capacidad de juego local mediante Bluetooth para dos jugadores sin necesidad de conexión a Internet, con sincronización de datos al servidor cuando esté disponible.
 
-## Requirements
+## Características
+
+- Gráficos 2D en pixel art.
+- Personajes con habilidades y herramientas que crecen con el tiempo.
+- Ambientación de la Edad Media con criaturas míticas.
+- Jugabilidad simple con posibilidad de combos de pelea.
+- Sistema de niveles y advertencias para acceso a mazmorras o enfrentamientos.
+- Capacidad de conexión online para permitir juego multijugador (similar a un MMORPG).
+- Sincronización mediante Bluetooth para juego local de dos jugadores.
+- Servidor para gestionar conexiones y datos de jugadores.
+- Implementación de elementos estratégicos en el juego.
+
+## Requisitos
 
 ### Must Have
-* Gráficos 2D en pixel art.
-* Personajes con habilidades y herramientas que crecen con el tiempo.
-* Ambientación de la Edad Media con criaturas míticas.
-* Jugabilidad simple con posibilidad de combos de pelea.
-* Sistema de niveles y advertencias para acceso a mazmorras o enfrentamientos.
-* Capacidad de conexión online para permitir juego multijugador (similar a un MMORPG).
-* Servidor para gestionar conexiones y datos de jugadores.
-* Implementación de elementos estratégicos en el juego.
+- Gráficos 2D en pixel art.
+- Personajes con habilidades y herramientas que crecen con el tiempo.
+- Ambientación de la Edad Media con criaturas míticas.
+- Jugabilidad simple con posibilidad de combos de pelea.
+- Sistema de niveles y advertencias para acceso a mazmorras o enfrentamientos.
+- Capacidad de conexión online para permitir juego multijugador.
+- Sincronización mediante Bluetooth para juego local de dos jugadores.
+- Servidor para gestionar conexiones y datos de jugadores.
+- Implementación de elementos estratégicos en el juego.
 
 ### Should Have
-* Chat en el juego para la comunicación entre jugadores.
-* Sistema de comercio entre jugadores.
-* Eventos especiales y misiones temporales.
+- Chat en el juego para la comunicación entre jugadores.
+- Sistema de comercio entre jugadores.
+- Eventos especiales y misiones temporales.
 
 ### Could Have
-* Personalización avanzada de personajes.
-* Sistema de clanes o gremios.
-* Misiones secundarias y logros.
+- Personalización avanzada de personajes.
+- Sistema de clanes o gremios.
+- Misiones secundarias y logros.
 
 ### Won't Have
-* Gráficos 3D.
-* Soporte para múltiples plataformas (solo Android).
+- Gráficos 3D.
+- Soporte para múltiples plataformas (solo Android).
 
-## Method
+## Tecnologías Utilizadas
 
-### Arquitectura del Proyecto
+- **Cliente de Juego**: Godot Engine
+- **Servidor**: Python con FastAPI (o Django)
+- **Base de Datos**: PostgreSQL
 
-1. **Cliente (App Android en Godot)**
-   * **Interfaz de Usuario**: Pantallas de inicio, registro, menú principal, juego, inventario, etc.
-   * **Motor de Juego**: Lógica del juego, controles de personaje, física y renderización.
-   * **Red**: Comunicación con el servidor para sincronización de datos de jugadores.
+## Instalación y Configuración
 
-2. **Servidor**
-   * **Servidor de Juego**: Manejo de conexiones, gestión de datos de jugadores, sincronización de partidas.
-   * **Base de Datos**: Almacenamiento de datos de jugadores, progreso, inventarios, etc.
+### Configuración del Proyecto en Godot
 
-### Componentes Clave
-   * **Gestión de Usuarios**: Registro, inicio de sesión, autenticación.
-   * **Lógica de Niveles**: Sistema de niveles y restricciones de acceso a mazmorras.
-   * **Sistema de Habilidades y Herramientas**: Crecimiento y mejora continua de personajes.
-   * **Mecánicas de Juego**: Movimientos, combates, estrategia.
-   * **Interacción Online**: Sincronización y gestión de partidas multijugador.
-
-## Implementation
-
-### Configuración Inicial del Proyecto
-1. Descargar e instalar Godot Engine.
-2. Crear un nuevo proyecto en Godot.
+1. Descargar e instalar [Godot Engine](https://godotengine.org/).
+2. Clonar el repositorio y abrir el proyecto en Godot.
 3. Configurar el entorno de desarrollo y las preferencias del proyecto.
 
-### Desarrollo del Cliente en Godot
-1. Diseñar y crear la interfaz de usuario.
-2. Implementar la lógica del motor de juego.
+### Desarrollo del Cliente
+
+1. Diseñar y crear la interfaz de usuario en Godot.
+2. Implementar la lógica del motor de juego usando GDScript.
 3. Desarrollar los sistemas de habilidades y herramientas.
-4. Implementar la jugabilidad, incluyendo movimientos, combates y estrategia.
-5. Configurar la comunicación con el servidor.
+4. Implementar la jugabilidad, incluyendo movimientos, combates y estrategias.
+5. Implementar la sincronización mediante Bluetooth para juego local de dos jugadores.
+6. Configurar la comunicación con el servidor para la sincronización de datos.
 
-### Desarrollo del Servidor
-1. Configurar el servidor de juego (puede ser en Node.js, Python, etc.).
-2. Implementar la gestión de usuarios y sincronización de datos.
-3. Desarrollar el sistema de niveles y restricciones.
-4. Integrar la base de datos para almacenamiento de datos de jugadores.
+### Configuración del Servidor
 
-### Pruebas y Ajustes
-1. Realizar pruebas de funcionalidad y rendimiento en el cliente y servidor.
-2. Ajustar y optimizar la jugabilidad y la lógica del juego.
-3. Implementar medidas de seguridad y manejo de errores.
+1. Clonar el repositorio del servidor:
+	```bash
+	git clone <repository-url>
+	cd <repository-directory>
+	```
 
-## Milestones
+2. Instalar las dependencias:
+	```bash
+	pip install -r requirements.txt
+	```
 
-1. **Primer Mes**: 
-   * Configuración del proyecto en Godot y servidor.
-   * Diseño de la interfaz de usuario y primeras pantallas.
+3. Configurar el entorno virtual:
+	```bash
+	python -m venv venv
+	source venv/bin/activate  # En Windows: venv\Scripts\activate
+	```
 
-2. **Segundo Mes**:
-   * Implementación del motor de juego y mecánicas básicas.
-   * Desarrollo del sistema de habilidades y herramientas.
+4. Configurar el servidor con FastAPI:
+	- Crear un archivo `main.py` con la configuración de FastAPI.
+	- Configurar las rutas y lógica de negocio.
 
-3. **Tercer Mes**:
-   * Implementación de la lógica de niveles y restricciones.
-   * Conexión y comunicación entre cliente y servidor.
+	```python
+	from fastapi import FastAPI
 
-4. **Cuarto Mes**:
-   * Desarrollo de funcionalidades de interacción online.
-   * Pruebas iniciales de jugabilidad y ajustes.
+	app = FastAPI()
 
-5. **Quinto Mes**:
-   * Optimización del rendimiento.
-   * Implementación de características adicionales como chat y comercio.
+	@app.get("/")
+	def read_root():
+		return {"message": "Subarash-monogatari-no-hajimari Server"}
 
-6. **Sexto Mes**:
-   * Pruebas finales y ajustes.
-   * Preparación y lanzamiento de la beta.
+	# Implementar más rutas y lógica aquí
 
-## Gathering Results
+	if __name__ == "__main__":
+		import uvicorn
+		uvicorn.run(app, host="0.0.0.0", port=8000)
+	```
 
-### Feedback de Usuarios
-1. Recoger comentarios y sugerencias de los jugadores de la beta.
-2. Evaluar la satisfacción del usuario y la jugabilidad.
+5. Configurar la base de datos PostgreSQL:
+	- Instalar PostgreSQL y crear una base de datos.
+	- Configurar la conexión en el servidor.
 
-### Métricas de Rendimiento
-1. Monitorear el rendimiento del juego en diferentes dispositivos Android.
-2. Evaluar la estabilidad y la tasa de errores.
+	```python
+	from sqlalchemy import create_engine
 
-### Análisis de Datos
-1. Analizar el comportamiento de los jugadores y el uso de las funcionalidades del juego.
-2. Evaluar la efectividad del sistema de niveles y las mecánicas de crecimiento.
+	DATABASE_URL = "postgresql://user:password@localhost/dbname"
+	engine = create_engine(DATABASE_URL)
 
----
+	# Configurar modelos y sesiones aquí
+	```
 
-¡Gracias por tu interés en el proyecto! Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos.
+6. Ejecutar el servidor:
+	```bash
+	uvicorn main:app --reload
+	```
+
+## Contribución
+
+1. Hacer un fork del repositorio.
+2. Crear una nueva rama (`git checkout -b feature/nueva-feature`).
+3. Realizar los cambios necesarios y hacer commit (`git commit -am 'Añadir nueva-feature'`).
+4. Push a la rama (`git push origin feature/nueva-feature`).
+5. Crear un Pull Request.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
