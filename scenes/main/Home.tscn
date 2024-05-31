@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4cndl34ef1m6"]
+
+[ext_resource type="Texture2D" uid="uid://cg4kbe1f1ywp8" path="res://assets/images/backgrounds/Inicio.png" id="1_qd121"]
+[ext_resource type="Texture2D" uid="uid://g1hxtbx5edhw" path="res://assets/images/backgrounds/Icono.png" id="2_d0wxh"]
+[ext_resource type="Texture2D" uid="uid://dtb040eixubcv" path="res://assets/images/gui/Botones.png" id="3_frxa5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxou"]
+size = Vector2(215.5, 51)
+
+[node name="Inicio" type="Node2D"]
+
+[node name="Inicio" type="Sprite2D" parent="."]
+position = Vector2(571.75, 311)
+scale = Vector2(0.828404, 0.636719)
+texture = ExtResource("1_qd121")
+
+[node name="Icono" type="Sprite2D" parent="."]
+position = Vector2(250, 139)
+texture = ExtResource("2_d0wxh")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(457, 458)
+scale = Vector2(1.032, 1)
+texture = ExtResource("3_frxa5")
+centered = false
+hframes = 2
+vframes = 7
+
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(600.25, 502)
+shape = SubResource("RectangleShape2D_lvxou")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
